@@ -28,9 +28,9 @@ const addPet = event => {
       console.log(newPet.petName, " & ", element.petName, " has the same owner: ", newPet.ownerName);
   });
   pet.push(newPet);
-  document.querySelector(
-    "#list"
-  ).innerHTML += `<li class="list-group-item">${newPet.petName}, ${newPet.ownerName}, ${newPet.species}, ${newPet.breed}</li>`;
+  document.querySelector("#list").innerHTML += `<li class="list-group-item">
+    ${newPet.petName}, ${newPet.ownerName}, ${newPet.species}, ${newPet.breed}
+    </li>`;
 };
 
 const selectBreed = event => {
