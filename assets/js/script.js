@@ -28,35 +28,26 @@ const addPet = event => {
       console.log(newPet.petName, " & ", element.petName, " has the same owner: ", newPet.ownerName);
   });
   pet.push(newPet);
-  //   document.querySelector("#list").innerHTML += `<li class="list-group-item">
-  //     ${newPet.petName}, ${newPet.ownerName}, ${newPet.species}, ${newPet.breed}
-  //     </li>`;
 
   const row = document.createElement("tr");
   const rowName = document.createElement("td");
-  rowName.setAttribute("scope", "col");
-  rowName.innerText = newPet.petName;
   const rowOwner = document.createElement("td");
-  rowOwner.setAttribute("scope", "col");
-  rowOwner.innerText = newPet.ownerName;
   const rowSpecies = document.createElement("td");
-  rowSpecies.setAttribute("scope", "col");
-  rowSpecies.innerText = newPet.species;
   const rowBreed = document.createElement("td");
-  rowBreed.setAttribute("scope", "col");
+  rowName.innerText = newPet.petName;
+  rowOwner.innerText = newPet.ownerName;
+  rowSpecies.innerText = newPet.species;
   rowBreed.innerText = newPet.breed;
   row.appendChild(rowName);
   row.appendChild(rowOwner);
   row.appendChild(rowSpecies);
   row.appendChild(rowBreed);
-
   document.querySelector("#table").appendChild(row);
 };
 
 const selectBreed = event => {
   const species = event.target.value;
   const select = document.querySelector("#breed");
-  //   select.innerHTML = "";
   select.innerHTML = `<option value="">select a breed</option>`;
   select.removeAttribute("disabled");
   switch (species) {
