@@ -11,8 +11,7 @@ class Pet {
     this.breed = breed;
   }
   sameOwner(pet) {
-    if (this.ownerName === pet.ownerName) return true;
-    else return false;
+    return this.ownerName === pet.ownerName;
   }
 }
 
